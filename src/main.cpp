@@ -2,6 +2,9 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <time.h>
+
+
+
 #include <iostream>
 //#include <stdlib.h>     /* system, NULL, EXIT_FAILURE, strtol, atoi  */
 
@@ -14,7 +17,9 @@
 #include <string>
 
 
-#include "..\\include\\show_time.h" 
+#include "show_time.h" 
+#include "timegm.h" 
+//#include "..\\include\\timegm.h" 
 
 //#define UTC (0)
 int main(int argc, char *argv[]) {
@@ -34,7 +39,17 @@ int main(int argc, char *argv[]) {
 	//std::cout<<rawtime<<std::endl;
 	ptm = gmtime(&rawtime);
 	std::cout << "UTC time\t" << ptm->tm_year + 1900 << "-" << ptm->tm_mon+1 << "-" << ptm->tm_mday << " " << ptm->tm_hour << ":" << ptm->tm_min << ":" << ptm->tm_sec <<std::endl; 
-	
+
 	show_time(ptm);
+	
+	ptm->tm_year = 2000	-1900;
+	ptm->tm_mon = 	7 		-1;
+	ptm->tm_mday = 2;
+	ptm->tm_hour = 23;
+	ptm->tm_min = 59;
+	ptm->tm_sec = 59;
+	
+	time_t mod_epoch = timegm(ptm);
+	std::cout << mod_epoch << std::endl;
 	return 0;
 }
