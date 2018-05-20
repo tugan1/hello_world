@@ -2,26 +2,17 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <time.h>
-
-
-
 #include <iostream>
 //#include <stdlib.h>     /* system, NULL, EXIT_FAILURE, strtol, atoi  */
-
 //#include <cmath>
 //#include <time.h>
-
 // STANDARD LIBRARY, STD::xyz //
 #include <vector>
 #include <map>
 #include <string>
-
-
 #include "show_time.h" 
 #include "timegm.h" 
-//#include "..\\include\\timegm.h" 
 
-//#define UTC (0)
 int main(int argc, char *argv[]) {
 
 	std::cout<<"Hello world"<<std::endl;
