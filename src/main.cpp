@@ -33,13 +33,14 @@ int main(int argc, char *argv[]) {
 	ptm_local = localtime(&rawtime);
 	//printf ("Current local time and date: %s", asctime(ptm_local));
 	//printf ("Current : %2d:%02d\n", (ptm_local->tm_hour)%24, ptm_local->tm_min);
-	std::cout << "Local time\t" << ptm_local->tm_year + 1900 << "-" << ptm_local->tm_mon+1 << "-" << ptm_local->tm_mday << " " << ptm_local->tm_hour << ":" << ptm_local->tm_min << ":" << ptm_local->tm_sec <<std::endl; 
-  
+	//std::cout << "Local time\t" << ptm_local->tm_year + 1900 << "-" << ptm_local->tm_mon+1 << "-" << ptm_local->tm_mday << " " << ptm_local->tm_hour << ":" << ptm_local->tm_min << ":" << ptm_local->tm_sec <<std::endl; 
+	printf("Local time: ");
+	show_time(ptm_local);
 	struct tm* ptm;
 	//std::cout<<rawtime<<std::endl;
 	ptm = gmtime(&rawtime);
-	std::cout << "UTC time\t" << ptm->tm_year + 1900 << "-" << ptm->tm_mon+1 << "-" << ptm->tm_mday << " " << ptm->tm_hour << ":" << ptm->tm_min << ":" << ptm->tm_sec <<std::endl; 
-
+	//std::cout << "UTC time\t" << ptm->tm_year + 1900 << "-" << ptm->tm_mon+1 << "-" << ptm->tm_mday << " " << ptm->tm_hour << ":" << ptm->tm_min << ":" << ptm->tm_sec <<std::endl; 
+	printf("UTC time: ");
 	show_time(ptm);
 	
 	ptm->tm_year = 2000	-1900;
